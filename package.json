@@ -1,0 +1,25 @@
+{
+  "name": "node-rxjs-commander-dojo",
+  "version": "1.0.0",
+  "description": "Coding Dojo with NodeJS, RxJS and commander.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --harmony index.js",
+    "check": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zupzup/node-rxjs-commander-dojo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "commander": "^2.9.0",
+    "rxjs": "^5.0.0-beta.6"
+  },
+  "devDependencies": {
+    "eslint": "^2.8.0",
+    "nodemon": "^1.9.1"
+  }
+}
