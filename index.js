@@ -2,11 +2,15 @@
 
 const commander = require('commander');
 const Rx = require('rxjs/Rx');
-const JSONStream = require('JSONStream');
 const fs = require('fs');
-const RxNode = require('rx-node');
 
-const fileStream = fs.createReadStream('files/products.json').pipe(JSONStream.parse('products'));
-RxNode.fromStream(fileStream).subscribe((x) => {
-    console.log(x);
+const readFile = Rx.Observable.bindNodeCallback(fs.readFile);
+const source = readFile('files/products.json')
+    .map(input => JSON.parse(input))
+    .pluck('products')
+    .flatMap(product => product);
+
+source.subscribe((product) => {
+    console.log(product);
+    fs.writeFileSync(`result/${product.code}.json`, JSON.stringify(product));
 });

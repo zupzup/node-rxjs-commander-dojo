@@ -4,7 +4,7 @@
   "description": "Coding Dojo with NodeJS, RxJS and commander.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --harmony index.js",
+    "dev": "nodemon --harmony --watch index.js index.js",
     "check": "eslint ."
   },
   "repository": {
@@ -14,10 +14,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "JSONStream": "^1.1.1",
-    "bluebird": "^3.3.5",
     "commander": "^2.9.0",
-    "rx-node": "^1.0.2",
     "rxjs": "^5.0.0-beta.6"
   },
   "devDependencies": {
