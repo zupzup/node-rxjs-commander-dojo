@@ -9,7 +9,19 @@ Coding Dojo with NodeJS, RxJS and commander.js
 # Utilities
 - npm check for linting with eslint
 
-# data
+# Docs
+- http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
+- https://github.com/tj/commander.js/
+- https://github.com/dominictarr/JSONStream
+- https://nodejs.org/api/fs.html
+- https://github.com/Reactive-Extensions/rx-node/blob/master/doc/api/nodejs.md
 
-- ./data/issues.json, the issues the user worked on in some way - jira api e.g.: https://jira.example.com/rest/api/latest/search?jql=(participants = userName or assignee = userName) and updatedDate >= 2016-04-01
-- ./data/worklogs.json, a user's worklogs for a period - tempo API, e.g.: https://jira.example.com/rest/tempo-timesheets/3/worklogs/?dateFrom=2016-04-01
+# Tasks
+
+- Split up the big file into smaller files (1 for each product) and write them into a split/ folder [x] (split-products)
+- Do the same with the brands, split them up in files named "brand_code.json" (split-brands)
+- From each product file, take the code and brand details and create a new concatenated json file, but only for products which have brand (collect-branded-products)
+    - Do this in parallel, max. 2 at a time
+- Record and log how long each step takes
+- Record and log how many products are collected
+- Implement error handling for corrupt files (test by using the _corrupt files)
