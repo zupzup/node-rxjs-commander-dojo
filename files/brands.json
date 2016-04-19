@@ -1,0 +1,29 @@
+{
+    "brands": [
+        {
+            "code": "000001",
+            "name": "Nike",
+            "image": "nike_logo.png"
+        },
+        {
+            "code": "000002",
+            "name": "Adidas",
+            "image": "adidas_logo.png"
+        },
+        {
+            "code": "000004",
+            "name": "Puma",
+            "image": "puma_logo.png"
+        },
+        {
+            "code": "000005",
+            "name": "Asics",
+            "image": "asics_logo.png"
+        },
+        {
+            "code": "000006",
+            "name": "Under Armour",
+            "image": "ua_logo.png"
+        }
+    ]
+}

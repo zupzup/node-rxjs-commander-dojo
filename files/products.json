@@ -1,0 +1,74 @@
+{
+    "products": [
+        {
+            "code": "12341",
+            "name": "Running Shoe",
+            "brand": "000001",
+            "price": "1200.00",
+            "stock": "15"
+        },
+        {
+            "code": "12342",
+            "name": "Jogging Shirt",
+            "brand": "000002",
+            "price": "210.00",
+            "stock": "25"
+        },
+        {
+            "code": "12343",
+            "name": "Cool Sneakers",
+            "brand": null,
+            "price": "110.00",
+            "stock": "51"
+        },
+        {
+            "code": "12344",
+            "name": "Sweatshirt",
+            "brand": "000004",
+            "price": "4310.00",
+            "stock": "58"
+        },
+        {
+            "code": "12345",
+            "name": "Pro Marathon Shoe",
+            "brand": "000005",
+            "price": "5.00",
+            "stock": "97"
+        },
+        {
+            "code": "12346",
+            "name": "Indoor Soccer Shoe",
+            "brand": "000005",
+            "price": "10.00",
+            "stock": "57"
+        },
+        {
+            "code": "12347",
+            "name": "Baseball Cap",
+            "brand": null,
+            "price": "800.00",
+            "stock": "23"
+        },
+        {
+            "code": "12347",
+            "name": "Hipster Beanie",
+            "brand": null,
+            "price": "14.00",
+            "stock": "11"
+        },
+        {
+            "code": "12348",
+            "name": "Fleece Sweater",
+            "brand": "000006",
+            "price": "3.00",
+            "stock": "87"
+        },
+        {
+            "code": "12349",
+            "name": "Lifting Gloves",
+            "brand": "000006",
+            "price": "8.40",
+            "stock": "1200"
+        }
+    ]
+}
