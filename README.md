@@ -18,10 +18,9 @@ Coding Dojo with NodeJS, RxJS and commander.js
 
 # Tasks
 
-- Split up the products.json file into smaller files (1 for each product, named by code) and write them into a split/ folder (split-products)
-- Do the same with the brands, split them up in files named "brand_code.json" (split-brands)
-- From each product file, take the code and brand details and create a new concatenated json file, but only for products which have a brand (collect-branded-products)
-    - Do this in parallel, max. N at a time, where N comes from commander
+- Split up the products.json file into smaller files (1 for each product, {code}.json) and write them into a split/ folder (split-products)
+- Do the same with the brands, split them up in files named {code}.json" (split-brands)
+- create a new concatenated json file with the product code and brand data (code, brand: {}), but only for products which have a brand (collect-branded-products)
 - Record and log how long each step takes (--log-duration)
 - Record and log how many products are collected for each brand (--log-amount)
 - Implement error handling for corrupt files (test by using files in the /corrupt folder)

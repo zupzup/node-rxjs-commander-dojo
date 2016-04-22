@@ -4,7 +4,6 @@
   "description": "Coding Dojo with NodeJS, RxJS and commander.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --harmony --watch index.js index.js",
     "check": "eslint ."
   },
   "repository": {
