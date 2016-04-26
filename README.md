@@ -25,3 +25,9 @@ Coding Dojo with NodeJS, RxJS and commander.js
 - Record and log how many products are collected for each brand (--log-amount)
 - Implement error handling for corrupt files (test by using files in the /corrupt folder)
     - log erroneous files and handle the rest
+
+FILE WATCH EXAMPLE:
+
+* zB sowas wie testrunner -> wenn change, dann run
+* oder service, das files pusht und jedes mal wenn ein file reinkommt, wird's verarbeitet
+* one stream für file lesen -> schreiben und geschriebenes direkt verarbeiten
