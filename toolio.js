@@ -44,19 +44,25 @@ function collect() {
 
     const $products = $fileNames.filter(fileName => fileName.indexOf('product') !== -1);
     const $brands = $fileNames.filter(fileName => fileName.indexOf('brand') !== -1);
+
     $products.subscribe((fileName) => {
         const $readProduct = readFile(`result/${fileName}`)
-        .map(file => JSON.parse(file));
-        $readProduct.subscribe((file) => {
-            console.log(file);
-        });
-    });
+            .map(file => JSON.parse(file))
+            .filter(product => product.brand !== null);
 
-    $brands.subscribe((fileName) => {
-        const $readProduct = readFile(`result/${fileName}`)
-        .map(file => JSON.parse(file));
-        $readProduct.subscribe((file) => {
-            console.log(file);
+        $readProduct.subscribe((product) => {
+            $brands
+                .filter(fileName => fileName.indexOf(product.brand) !== -1)
+                .map(fileName => readFile(`result/${fileName}`))
+                .flatMap(file => file)
+                .map(file => JSON.parse(file))
+                .map((brand) => {
+                    return {
+                        code: product.code,
+                        brand: brand
+                    };
+                })
+                .subscribe(collected => console.log(collected));
         });
     });
 }
