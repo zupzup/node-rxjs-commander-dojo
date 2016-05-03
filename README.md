@@ -30,4 +30,13 @@ FILE WATCH EXAMPLE:
 
 * zB sowas wie testrunner -> wenn change, dann run
 * oder service, das files pusht und jedes mal wenn ein file reinkommt, wird's verarbeitet
-* one stream für file lesen -> schreiben und geschriebenes direkt verarbeiten
+* watch auf folder, wenn file reinkommt -> transformation parallel, dann zusammenwarten bis 5 files fertig sind, diese dann in 1 file concatenaten
+
+TCPDUMP example
+
+* start tcpdump with some parameters (child_process) and parse data
+* color things from the same source in the same color
+* buffer for 10 entries or timeout
+
+CURL für streams
+* stream API (twitter?) anfahren und script dafür schreiben, das das verarbeitet und ordentlich formatiert
