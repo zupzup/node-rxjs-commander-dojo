@@ -9,6 +9,18 @@ const chokidar = require('chokidar');
 const readFile = Rx.Observable.bindNodeCallback(fs.readFile);
 const writeFile = Rx.Observable.bindNodeCallback(fs.writeFile);
 const readDirectory = Rx.Observable.bindNodeCallback(fs.readdir);
+const request = require('superagent');
+
+const serverURL = "http://localhost:4000";
+
+function getData(id, cb) {
+    request
+        .get(serverURL + '/data/' + id)
+        .accept('json')
+        .end((err, resp) => {
+            cb(err, resp.text);
+        });
+};
 
 function writeForType(type, data) {
     const fileName = `result/${type}_${data.code}.json`;
@@ -99,7 +111,26 @@ function watch() {
 }
 
 function filter() {
-    // TODO
+    const socket = require('socket.io-client')(serverURL);
+    const $socket = Rx.Observable.fromEvent(socket, 'event', data => data)
+        .concatMap((data) => {
+            return Rx.Observable.bindNodeCallback(getData.bind(null, data.id))()
+                .map(res => JSON.parse(res));
+        })
+        .bufferTime(2000);
+
+    $socket.subscribe((data) => {
+        console.log(data);
+    });
+
+    $socket
+        .flatMap(data => data)
+        .scan((acc, curr) => {
+            return acc + Number.parseFloat(curr.product.price);
+        }, 0)
+        .subscribe((data) => {
+            console.log('Accumulated Price: ' + data);
+        });
 }
 
 program

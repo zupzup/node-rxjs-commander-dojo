@@ -44,11 +44,13 @@ https://github.com/node-inspector/node-inspector
 # A Reactive Streaming Client
 
 - -f / --filter
-    - socket.io server ./socket, runs on http://localhost:4000 
+    - socket.io server ./socket.js, runs on http://localhost:4000 
     - on "/data" you get a stream of unfiltered data
     - subscribe to that stream
         - for each value, make a request to /data/{id}
     - print the results
         - in the order you received the id's
-    - only print once every second
+        - grouped by color
+    - only print once every 2 seconds
+    - print the combined price of all products as well
 
