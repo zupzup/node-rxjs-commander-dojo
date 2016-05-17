@@ -36,9 +36,9 @@ https://github.com/node-inspector/node-inspector
     - watch the "import" folder for changes
         - use chokidar for file-watching
         - https://github.com/paulmillr/chokidar
-    - when a file comes in, read and transform it in a seperate thread
-        - we are only interested in code/name/categoryId
-    - when you gathered 5 products from a certain category, concatenate them and log them
+    - when a file comes in, read and transform it
+        - we are only interested in code/name/category
+    - when you gathered 5 products from a certain category, log them
     - use the "files/importProducts{1,2,3}" files for testing
 
 # A Reactive Streaming Client
@@ -51,12 +51,4 @@ https://github.com/node-inspector/node-inspector
     - print the results
         - in the order you received the id's
     - only print once every second
-
-# A Reactive Web Server
-
-Server Endpoint:
-
-- Standard HTTP Server
-- Observable from requests
-- call multiple things..
 

@@ -1,0 +1,74 @@
+{
+    "products": [
+        {
+            "code": "22341",
+            "name": "Synchronized Swimming Gloves",
+            "category": "Misc",
+            "price": "1200.00",
+            "stock": "15"
+        },
+        {
+            "code": "22342",
+            "name": "Dancing Shoes",
+            "category": "Shoes",
+            "price": "210.00",
+            "stock": "25"
+        },
+        {
+            "code": "22343",
+            "name": "Lame Sneakers",
+            "category": "Shoes",
+            "price": "110.00",
+            "stock": "51"
+        },
+        {
+            "code": "22344",
+            "name": "Underpants",
+            "category": "Underwear",
+            "price": "4310.00",
+            "stock": "58"
+        },
+        {
+            "code": "22345",
+            "name": "Boxing Gloves",
+            "category": "Misc",
+            "price": "5.00",
+            "stock": "97"
+        },
+        {
+            "code": "22346",
+            "name": "Climbing Shoe",
+            "category": "Shoes",
+            "price": "10.00",
+            "stock": "57"
+        },
+        {
+            "code": "22347",
+            "name": "Gangster Cap Geisi",
+            "category": "Hats",
+            "price": "800.00",
+            "stock": "23"
+        },
+        {
+            "code": "22348",
+            "name": "Hipster Shoes",
+            "category": "Shoes",
+            "price": "14.00",
+            "stock": "11"
+        },
+        {
+            "code": "22349",
+            "name": "Hip Sweater",
+            "category": "Shirts",
+            "price": "3.00",
+            "stock": "87"
+        },
+        {
+            "code": "22340",
+            "name": "Snow Gloves",
+            "category": "Misc",
+            "price": "8.40",
+            "stock": "1200"
+        }
+    ]
+}

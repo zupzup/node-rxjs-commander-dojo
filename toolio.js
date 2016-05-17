@@ -69,7 +69,37 @@ function collect() {
 }
 
 function watch() {
+    const $watcher = Rx.Observable.fromEvent(chokidar.watch('./import'), 'add', path => path)
+        .flatMap((path) => {
+            return readFile(path)
+                .map(file => JSON.parse(file))
+                .pluck('products')
+                .flatMap(product => product)
+                .map((product) => {
+                    return {
+                        code: product.code,
+                        name: product.name,
+                        category: product.category
+                    };
+                });
+        });
 
+    $watcher
+        .groupBy(product => product.category, product => product)
+        .subscribe(($category) => {
+            $category
+                .bufferCount(5, 5)
+                .subscribe((prod) => {
+                    console.log($category.key);
+                    console.log('==========================');
+                    console.log(prod);
+                    console.log('==========================');
+                });
+        });
+}
+
+function filter() {
+    // TODO
 }
 
 program
@@ -77,6 +107,7 @@ program
     .option('-s --split', 'splits products and brands into files by code')
     .option('-c --collect', 'collects products and their brands')
     .option('-w --watch', 'watches and importsf files')
+    .option('-f --filter', 'filters the values from the stream')
     .parse(process.argv);
 
 if (program.split) {
@@ -89,4 +120,8 @@ if (program.collect) {
 
 if (program.watch) {
     watch();
+}
+
+if (program.filter) {
+    filter();
 }

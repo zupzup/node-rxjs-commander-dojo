@@ -1,0 +1,74 @@
+{
+    "products": [
+        {
+            "code": "32341",
+            "name": "Golf Shoe",
+            "category": "Shoes",
+            "price": "1200.00",
+            "stock": "15"
+        },
+        {
+            "code": "32342",
+            "name": "Tennis Shirt",
+            "category": "Shirts",
+            "price": "210.00",
+            "stock": "25"
+        },
+        {
+            "code": "32343",
+            "name": "Lame Gloves",
+            "category": "Misc",
+            "price": "110.00",
+            "stock": "51"
+        },
+        {
+            "code": "32344",
+            "name": "Removeable Pants Spuci",
+            "category": "Misc",
+            "price": "4310.00",
+            "stock": "58"
+        },
+        {
+            "code": "32345",
+            "name": "Ballerinas",
+            "category": "Shoes",
+            "price": "5.00",
+            "stock": "97"
+        },
+        {
+            "code": "32346",
+            "name": "Sprinting Boots",
+            "category": "Shoes",
+            "price": "10.00",
+            "stock": "57"
+        },
+        {
+            "code": "32347",
+            "name": "Tennis Cap",
+            "category": "Hats",
+            "price": "800.00",
+            "stock": "23"
+        },
+        {
+            "code": "32348",
+            "name": "Golf Cap",
+            "category": "Hats",
+            "price": "14.00",
+            "stock": "11"
+        },
+        {
+            "code": "32349",
+            "name": "Tennis Shirt",
+            "category": "Shirts",
+            "price": "3.00",
+            "stock": "87"
+        },
+        {
+            "code": "32340",
+            "name": "Hunting Gloves",
+            "category": "Misc",
+            "price": "8.40",
+            "stock": "1200"
+        }
+    ]
+}
