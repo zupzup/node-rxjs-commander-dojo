@@ -5,6 +5,7 @@
 const program = require('commander');
 const Rx = require('rxjs/Rx');
 const fs = require('fs');
+const chokidar = require('chokidar');
 const readFile = Rx.Observable.bindNodeCallback(fs.readFile);
 const writeFile = Rx.Observable.bindNodeCallback(fs.writeFile);
 const readDirectory = Rx.Observable.bindNodeCallback(fs.readdir);
@@ -67,10 +68,15 @@ function collect() {
     });
 }
 
+function watch() {
+
+}
+
 program
     .version('1.0.0')
     .option('-s --split', 'splits products and brands into files by code')
     .option('-c --collect', 'collects products and their brands')
+    .option('-w --watch', 'watches and importsf files')
     .parse(process.argv);
 
 if (program.split) {
@@ -79,4 +85,8 @@ if (program.split) {
 
 if (program.collect) {
     collect();
+}
+
+if (program.watch) {
+    watch();
 }

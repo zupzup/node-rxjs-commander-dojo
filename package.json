@@ -2,9 +2,10 @@
   "name": "node-rxjs-commander-dojo",
   "version": "1.0.0",
   "description": "Coding Dojo with NodeJS, RxJS and commander.js",
-  "main": "index.js",
+  "main": "toolio.js",
   "scripts": {
-    "check": "eslint ."
+    "check": "eslint .",
+    "debug": "node-debug toolio.js"
   },
   "repository": {
     "type": "git",
@@ -13,11 +14,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "chokidar": "^1.5.0",
     "commander": "^2.9.0",
     "rxjs": "^5.0.0-beta.6"
   },
   "devDependencies": {
     "eslint": "^2.8.0",
+    "node-inspector": "^0.12.8",
     "nodemon": "^1.9.1"
   }
 }

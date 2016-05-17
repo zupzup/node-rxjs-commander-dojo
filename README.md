@@ -5,38 +5,58 @@ Coding Dojo with NodeJS, RxJS and commander.js
 
 - npm install
 - npm run dev
+- ./toolio.js
 
 # Utilities
 - npm check for linting with eslint
 
+debugging with:
+
+https://github.com/node-inspector/node-inspector
+
 # Docs
 - http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
 - https://github.com/tj/commander.js/
-- https://github.com/dominictarr/JSONStream
 - https://nodejs.org/api/fs.html
 - https://github.com/Reactive-Extensions/rx-node/blob/master/doc/api/nodejs.md
 
 # Tasks
 
-- Split up the products.json file into smaller files (1 for each product, {code}.json) and write them into a split/ folder (split-products)
-- Do the same with the brands, split them up in files named {code}.json" (split-brands)
-- create a new concatenated json file with the product code and brand data (code, brand: {}), but only for products which have a brand (collect-branded-products)
-- Record and log how long each step takes (--log-duration)
-- Record and log how many products are collected for each brand (--log-amount)
-- Implement error handling for corrupt files (test by using files in the /corrupt folder)
-    - log erroneous files and handle the rest
+# Simple Transformations and IO
 
-FILE WATCH EXAMPLE:
+-  -s / --split
+    - Split up the products.json file into smaller files (1 for each product, {code}.json) and write them into a result/ folder
+    - Do the same with the brands, split them up in files named {code}.json"
+-  -c / --collect
+    - create a new concatenated json file with the product code and brand data (code, brand: {}), but only for products which have a brand (collect-branded-products)
 
-* zB sowas wie testrunner -> wenn change, dann run
-* oder service, das files pusht und jedes mal wenn ein file reinkommt, wird's verarbeitet
-* watch auf folder, wenn file reinkommt -> transformation parallel, dann zusammenwarten bis 5 files fertig sind, diese dann in 1 file concatenaten
+# A Reactive File Importer
 
-TCPDUMP example
+- -w / --watch
+    - watch the "import" folder for changes
+        - use chokidar for file-watching
+        - https://github.com/paulmillr/chokidar
+    - when a file comes in, read and transform it in a seperate thread
+        - we are only interested in code/name/categoryId
+    - when you gathered 5 products from a certain category, concatenate them and log them
+    - use the "files/importProducts{1,2,3}" files for testing
 
-* start tcpdump with some parameters (child_process) and parse data
-* color things from the same source in the same color
-* buffer for 10 entries or timeout
+# A Reactive Streaming Client
 
-CURL für streams
-* stream API (twitter?) anfahren und script dafür schreiben, das das verarbeitet und ordentlich formatiert
+- -f / --filter
+    - socket.io server ./socket, runs on http://localhost:4000 
+    - on "/data" you get a stream of unfiltered data
+    - subscribe to that stream
+        - for each value, make a request to /data/{id}
+    - print the results
+        - in the order you received the id's
+    - only print once every second
+
+# A Reactive Web Server
+
+Server Endpoint:
+
+- Standard HTTP Server
+- Observable from requests
+- call multiple things..
+
