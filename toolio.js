@@ -6,12 +6,12 @@ const program = require('commander');
 const Rx = require('rxjs/Rx');
 const fs = require('fs');
 const chokidar = require('chokidar');
+const request = require('superagent');
+const serverURL = "http://localhost:4000";
+
 const readFile = Rx.Observable.bindNodeCallback(fs.readFile);
 const writeFile = Rx.Observable.bindNodeCallback(fs.writeFile);
 const readDirectory = Rx.Observable.bindNodeCallback(fs.readdir);
-const request = require('superagent');
-
-const serverURL = "http://localhost:4000";
 
 function getData(id, cb) {
     request
