@@ -19,6 +19,7 @@ https://github.com/node-inspector/node-inspector
 - https://github.com/tj/commander.js/
 - https://nodejs.org/api/fs.html
 - https://github.com/Reactive-Extensions/rx-node/blob/master/doc/api/nodejs.md
+- https://github.com/Reactive-Extensions/RxJS/tree/master/doc/api/core/operators
 
 # Tasks
 
